@@ -18,7 +18,7 @@ function determineGiscusTheme() {
 
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
-    "data-repo": "Mingyao-Wang/Personal_site_2026",
+    "data-repo": "Mingyao-Wang/Mingyao-Wang",
     "data-repo-id": "",
     "data-category": "Comments",
     "data-category-id": "",

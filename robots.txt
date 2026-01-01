@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://mingyaowang.github.io/sitemap.xml
+Sitemap: https://Mingyao-Wang.github.io/sitemap.xml
