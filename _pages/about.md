@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Hitotsubashi University, GSE. <a href='ed215105@g.hit-u.ac.jp'>Contacts</a>.
 
 profile:
   align: right
