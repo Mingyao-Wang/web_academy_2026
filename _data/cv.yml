@@ -2,96 +2,137 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Mingyao Wang
+    - name: Position
+      value: Ph.D. Candidate in Economics
+    - name: Institution
+      value: Hitotsubashi University
+    - name: Email
+      value: ed215105@g.hit-u.ac.jp
     - name: Languages
-      value: English, German
+      value: Chinese (Native), Japanese (Fluent), English (Professional)
+
+- title: Research Interests
+  type: list
+  contents:
+    - Environmental Economics
+    - Health Economics
+    - Applied Econometrics
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. Candidate in Economics
+      institution: Hitotsubashi University, Graduate School of Economics, Tokyo, Japan
+      year: 2021 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+        - 'Dissertation: "The Good, The Bad, and The Ugly: Essays on Environmental Policy"'
+        - Advisor: Prof. Reo Takaku
+    - title: M.A. in Economics
+      institution: Hitotsubashi University, Graduate School of Economics, Tokyo, Japan
+      year: 2018 - 2021
+    - title: B.A. in Finance
+      institution: University of Jinan, Business School, Jinan, China
+      year: 2012 - 2016
 
-- title: Experience
+- title: Publications
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Hidden Hazards Behind Coal Cleaning Technology
+      institution: Science of the Total Environment, 954, 176461
+      year: 2024
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Unintended Health Deteriorations Amid China's Air Quality Improvements
+        - <a href="https://doi.org/10.1016/j.scitotenv.2024.176461">DOI:10.1016/j.scitotenv.2024.176461</a>
+    - title: On Children's School Lives After the COVID Pandemic
+      institution: Journal of Social Security Research, 7(3), 224-235
+      year: 2022
       description:
-        - Description 1.
-        - Description 2.
+        - The Results and Preliminary Analysis of the School Life Survey in June 2022
+        - Co-authored with Reo Takaku
+        - <a href="http://dx.doi.org/10.50870/00000465">DOI:10.50870/00000465</a>
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Working Papers
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Indoor Smoking Bans and Children's Health Outcomes in Japan
+      institution: RIETI Discussion Paper Series 25-E-088
+      year: 2025
+      description:
+        - Co-authored with TANG Meng-Chi and Ting YIN
+        - <a href="https://www.rieti.go.jp/en/publications/summary/25120016.html">Link</a>
+    - title: PFAS Contamination Disclosures and Declining Residential Land Prices in Polluted Areas of Japan
+      institution: SSRN Working Paper
+      year: 2025
+      description:
+        - <a href="http://dx.doi.org/10.2139/ssrn.5285846">DOI:10.2139/ssrn.5285846</a>
+    - title: Cleaner Upwind Air, Healthier Downwind Lives
+      institution: Work in Progress
+      year: ""
+      description:
+        - Health Improvements from IMO 2020 Marine Fuel Sulphur Reduction in Japanese Port Regions
+    - title: Cross-Border Health Effects of Upstream Air Quality Improvements
+      institution: Work in Progress
+      year: ""
+      description:
+        - Evidence from China-Japan Pollution Transport
 
-- title: Honors and Awards
+- title: Research Experience
   type: time_table
   contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+    - title: Research Assistant
+      institution: Hitotsubashi University, Graduate School of Economics
+      year: 2023 - Present
+      description:
+        - Research on National Ambulance Service Records with Prof. Reo Takaku
+    - title: Research Assistant
+      institution: Ministry of Economy, Trade and Industry (METI)
+      year: 2023 - 2025
+      description:
+        - Economic Analysis of Low Birth Rate and Aging Population Issues in Japan and China
+    - title: Research Assistant
+      institution: The University of Tokyo, Graduate School of Economics
+      year: 2023
+      description:
+        - Research on Factors Influencing the Severity of COVID-19 Patients
+    - title: Research Assistant
+      institution: University of Jinan, Business School
+      year: 2015 - 2016
+      description:
+        - Research on Agricultural Economics
 
-- title: Academic Interests
+- title: Teaching Experience
+  type: time_table
+  contents:
+    - title: Teaching Assistant
+      institution: Hitotsubashi University, Graduate School of Economics
+      year: 2020
+      description:
+        - Health Economics Seminar
+
+- title: Conference Presentations
+  type: time_table
+  contents:
+    - title: Western Economic Association International
+      institution: Bangkok, Thailand
+      year: 2026
+      description:
+        - Scheduled
+    - title: Applied Regional Economics Workshop
+      institution: Okinawa, Japan
+      year: 2025
+    - title: Japan Health Economics Association (JHEA) 21st Seminar for Early-Career Researchers
+      institution: Tokyo, Japan
+      year: 2024
+
+- title: Skills
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Programming
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - R, Python, Stata, LaTeX, Git
+    - title: Data & GIS
       items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+        - Satellite Data Processing (TROPOMI, ERA5)
+        - HYSPLIT Trajectory Modeling
+        - QGIS
