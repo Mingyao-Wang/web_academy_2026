@@ -130,9 +130,4 @@
   contents:
     - title: Programming
       items:
-        - R, Python, Stata, LaTeX, Git
-    - title: Data & GIS
-      items:
-        - Satellite Data Processing (TROPOMI, ERA5)
-        - HYSPLIT Trajectory Modeling
-        - QGIS
+        - R, Python, Stata
