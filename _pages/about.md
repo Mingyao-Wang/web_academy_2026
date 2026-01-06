@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My name is Mingyao Wang, currently pursuing a Ph.D. in Economics at Hitotsubashi University. My research primarily focuses on Environmental and Health Economics, particularly examining how environmental factors influence population health outcomes. Specializing in empirical analyses, I explore the intersection between environmental challenges and public health, aiming to provide evidence-based insights into how environmental issues affect population health. By integrating methodologies from Development Economics, Health Economics, and Environmental Economics, I strive to address these critical questions effectively and contribute to meaningful policy discussions.
+I am a Ph.D. candidate in Economics at Hitotsubashi University, specializing in Environmental and Health Economics. My research examines how environmental factors and policies affect population health outcomes, with a particular focus on air pollution, transboundary pollution, and environmental policy evaluation. By integrating methodologies from Health Economics, Environmental Economics, and Development Economics, I aim to provide evidence-based insights that contribute to meaningful policy discussions.
 
-I primarily use R for data cleaning and analysis, but I’m also proficient in Stata and Python. I have extensive experience in cleaning and analyzing high-quality datasets, including Japanese ambulance dispatch data and JMDC medical claims data. I’m skilled at handling large-scale datasets efficiently and accurately, ensuring robust and insightful analytical outcomes.
+I primarily use R for data cleaning and analysis, complemented by Stata and Python. I have extensive experience working with large-scale administrative datasets, including Japanese ambulance dispatch records and JMDC medical claims data.
 
