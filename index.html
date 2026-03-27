@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mingyao Wang — Environmental & Health Economist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --light: #f7f5f0;
+      --cream: #faf9f6;
+      --accent: #2e5a9c;
+      --accent-soft: #e8eef7;
+      --rule: #d8d4cb;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body { font-family: var(--serif); color: var(--ink); background: var(--cream); line-height: 1.72; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,246,0.94); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule); padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 980px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; height: 54px;
+    }
+    .nav-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--sans); font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* LAYOUT */
+    .page { max-width: 980px; margin: 0 auto; padding: 0 2rem; }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 230px;
+      gap: 4rem; padding: 5rem 0 4rem; border-bottom: 1px solid var(--rule);
+    }
+    .hero-text h1 {
+      font-family: var(--serif); font-size: 2.6rem; font-weight: 500;
+      line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.4rem;
+    }
+    .subtitle {
+      font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 1.8rem;
+    }
+    .hero-bio { font-size: 1.05rem; color: #3a3a36; max-width: 58ch; }
+    .hero-bio p + p { margin-top: 1rem; }
+    .hero-bio a { color: var(--accent); text-decoration: none; }
+    .hero-bio a:hover { text-decoration: underline; }
+
+    .contact-block { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.45rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: var(--sans); font-size: 0.82rem; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .contact-item:hover { color: var(--accent); }
+
+    /* PHOTO COLUMN */
+    .hero-photo-wrap { display: flex; flex-direction: column; align-items: center; padding-top: 0.5rem; gap: 1.2rem; }
+    .hero-photo {
+      width: 200px; height: 200px; border-radius: 4px;
+      object-fit: cover; object-position: top center; border: 1px solid var(--rule);
+    }
+    .affil-card {
+      width: 200px; background: var(--light);
+      border: 1px solid var(--rule); border-radius: 3px; padding: 1rem 1.1rem;
+    }
+    .affil-card strong { display: block; font-weight: 500; color: var(--ink); font-size: 0.82rem; margin-bottom: 0.2rem; }
+    .affil-card p { font-family: var(--sans); font-size: 0.76rem; line-height: 1.55; color: var(--muted); }
+    .affil-card p + p { margin-top: 0.4rem; }
+    .affil-divider { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--rule); }
+
+    /* SECTIONS */
+    section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+    section:last-child { border-bottom: none; }
+    .section-label {
+      font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 2rem;
+    }
+
+    /* YEAR GROUP */
+    .year-group { margin-bottom: 2.8rem; }
+    .year-group:last-child { margin-bottom: 0; }
+    .pub-year {
+      font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); font-weight: 500;
+      margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+    }
+
+    /* PUB ITEM */
+    .pub-item {
+      display: grid; grid-template-columns: 1fr auto; gap: 1.2rem;
+      padding: 1.1rem 0; border-bottom: 1px solid var(--rule); align-items: start;
+    }
+    .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .pub-badge {
+      display: inline-block; font-family: var(--sans); font-size: 0.67rem;
+      letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+      background: var(--accent-soft); color: var(--accent);
+      padding: 0.15rem 0.55rem; border-radius: 2px; margin-bottom: 0.3rem;
+    }
+    .pub-badge-wip {
+      display: inline-block; font-family: var(--sans); font-size: 0.67rem;
+      letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+      background: #f3f0e8; color: var(--muted);
+      padding: 0.15rem 0.55rem; border-radius: 2px; margin-bottom: 0.3rem;
+    }
+    .pub-title { font-size: 1rem; font-weight: 500; line-height: 1.42; margin-bottom: 0.25rem; color: var(--ink); }
+    .pub-meta { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+    .pub-links { display: flex; gap: 0.4rem; flex-shrink: 0; padding-top: 0.15rem; flex-wrap: wrap; justify-content: flex-end; }
+    .pub-link {
+      font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase;
+      font-weight: 500; color: var(--accent); text-decoration: none;
+      padding: 0.25rem 0.6rem; border: 1px solid var(--accent); border-radius: 2px;
+      white-space: nowrap; transition: all 0.18s;
+    }
+    .pub-link:hover { background: var(--accent-soft); }
+
+    /* TEACHING */
+    .teaching-prose { font-size: 1.02rem; color: #3a3a36; max-width: 72ch; line-height: 1.78; }
+
+    /* METHODS */
+    .methods-table { width: 100%; border-collapse: collapse; }
+    .methods-table tr { border-bottom: 1px solid var(--rule); }
+    .methods-table tr:last-child { border-bottom: none; }
+    .methods-table td { padding: 0.88rem 0; vertical-align: top; }
+    .methods-table td:first-child {
+      font-family: var(--sans); font-size: 0.76rem; font-weight: 500;
+      color: var(--muted); width: 160px; padding-right: 2rem; padding-top: 0.98rem;
+    }
+    .methods-table td:last-child { font-size: 0.93rem; color: var(--ink); line-height: 1.65; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--rule); padding: 2.5rem 0; }
+    .footer-inner {
+      max-width: 980px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer p { font-family: var(--sans); font-size: 0.74rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* ANIMATION */
+    .fade-in { opacity: 0; transform: translateY(16px); animation: fadeUp 0.65s ease forwards; }
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.2s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0 2.5rem; }
+      .hero-photo-wrap { flex-direction: row; align-items: flex-start; }
+      .affil-card { width: auto; flex: 1; }
+      .pub-item { grid-template-columns: 1fr; }
+      .pub-links { justify-content: flex-start; }
+      .nav-links { gap: 1.1rem; }
+      .methods-table td:first-child { width: 110px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#about" class="nav-name">Mingyao Wang</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="https://mingyaowang.com/cv/" target="_blank">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ABOUT / HERO -->
+  <div class="hero" id="about">
+    <div class="hero-text fade-in delay-1">
+      <div class="subtitle">PhD Candidate in Economics</div>
+      <h1>Mingyao Wang</h1>
+      <div class="hero-bio">
+        <p>
+          I am a Ph.D. candidate in Economics at
+          <a href="https://www.econ.hit-u.ac.jp/eng/">Hitotsubashi University</a>,
+          specializing in Environmental and Health Economics. My research examines how
+          environmental factors and policies affect population health outcomes, with a
+          particular focus on air pollution, transboundary pollution, and environmental
+          policy evaluation.
+        </p>
+        <p>
+          By integrating methodologies from Health Economics, Environmental Economics,
+          and Development Economics, I aim to provide evidence-based insights that
+          contribute to meaningful policy discussions.
+        </p>
+        <p>
+          I primarily use R for data cleaning and analysis, complemented by Stata and
+          Python. I have extensive experience working with large-scale administrative
+          datasets, including Japanese ambulance dispatch records and JMDC medical
+          claims data.
+        </p>
+      </div>
+      <div class="contact-block">
+        <a class="contact-item" href="mailto:ed215105@g.hit-u.ac.jp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          ed215105@g.hit-u.ac.jp
+        </a>
+        <a class="contact-item" href="https://mingyaowang.com/cv/" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Curriculum Vitae
+        </a>
+        <span class="contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Tokyo, Japan
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap fade-in delay-2">
+      <img class="hero-photo" src="https://mingyaowang.com/assets/img/prof_pic.jpg" alt="Mingyao Wang"/>
+      <div class="affil-card">
+        <strong>Hitotsubashi University</strong>
+        <p>Graduate School of Economics</p>
+        <p>Supervisor: Prof. Reo Takaku</p>
+        <p class="affil-divider">Tokyo, Japan</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-label">Publications &amp; Working Papers</div>
+
+    <!-- 2026 -->
+    <div class="year-group">
+      <div class="pub-year">2026</div>
+
+      <div class="pub-item">
+        <div>
+          <span class="pub-badge-wip">Work in Progress</span>
+          <div class="pub-title">Cleaner Upwind Air, Healthier Downwind Lives: Health Improvements from IMO 2020 Marine Fuel Sulphur Reduction in Japanese Port Regions</div>
+          <div class="pub-meta">Mingyao Wang</div>
+        </div>
+        <div class="pub-links"></div>
+      </div>
+
+      <div class="pub-item">
+        <div>
+          <span class="pub-badge-wip">Work in Progress</span>
+          <div class="pub-title">Cross-Border Health Effects of Upstream Air Quality Improvements: Evidence from China–Japan Pollution Transport</div>
+          <div class="pub-meta">Mingyao Wang</div>
+        </div>
+        <div class="pub-links"></div>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="year-group">
+      <div class="pub-year">2025</div>
+
+      <div class="pub-item">
+        <div>
+          <span class="pub-badge">SSRN</span>
+          <div class="pub-title">PFAS Contamination Disclosures and Declining Residential Land Prices in Polluted Areas of Japan</div>
+          <div class="pub-meta">Mingyao Wang · 2025</div>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://doi.org/10.2139/ssrn.5285846" target="_blank">DOI</a>
+          <a class="pub-link" href="http://dx.doi.org/10.2139/ssrn.5285846" target="_blank">HTML</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div>
+          <span class="pub-badge">RIETI</span>
+          <div class="pub-title">Indoor Smoking Bans and Children's Health Outcomes in Japan</div>
+          <div class="pub-meta">Meng-Chi Tang, Mingyao Wang, and Ting Yin · RIETI Discussion Paper Series 25-E-088, 2025</div>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.rieti.go.jp/en/publications/summary/25120016.html" target="_blank">HTML</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="year-group">
+      <div class="pub-year">2024</div>
+
+      <div class="pub-item">
+        <div>
+          <span class="pub-badge">STOTEN</span>
+          <div class="pub-title">Hidden Hazards Behind Coal Cleaning Technology: Unintended Health Deteriorations Amid China's Air Quality Improvements</div>
+          <div class="pub-meta">Mingyao Wang · <em>Science of the Total Environment</em>, vol. 954, 176461, 2024</div>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://doi.org/10.1016/j.scitotenv.2024.176461" target="_blank">DOI</a>
+          <a class="pub-link" href="https://doi.org/10.1016/j.scitotenv.2024.176461" target="_blank">HTML</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="year-group">
+      <div class="pub-year">2022</div>
+
+      <div class="pub-item">
+        <div>
+          <span class="pub-badge">JSSR</span>
+          <div class="pub-title">On Children's School Lives After the COVID Pandemic: The Results and Preliminary Analysis of the School Life Survey in June 2022</div>
+          <div class="pub-meta">Reo Takaku and Mingyao Wang · <em>Journal of Social Security Research</em>, vol. 7(3), pp. 224–235, 2022</div>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://doi.org/10.50870/00000465" target="_blank">DOI</a>
+          <a class="pub-link" href="http://dx.doi.org/10.50870/00000465" target="_blank">HTML</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <div class="section-label">Teaching</div>
+    <p class="teaching-prose">
+      My main teaching experience took place from March 2021 to September 2021, when I
+      worked full-time as a private tutor at a cram school. During this period, I taught
+      undergraduate-level introductory econometrics, microeconomics and macroeconomics,
+      primarily in Chinese, with supplementary instruction in Japanese and English, and
+      prepared students for university entrance examinations. I also taught high
+      school–level mathematics, with a particular focus on preparation for the
+      Examination for Japanese University Admission for International Students (EJU).
+      In addition, I have accumulated part-time teaching experience since enrolling in
+      the doctoral program.
+    </p>
+  </section>
+
+  <!-- METHODS -->
+  <section>
+    <div class="section-label">Methods &amp; Software</div>
+    <table class="methods-table">
+      <tr>
+        <td>Causal Inference</td>
+        <td>Instrumental Variables (2SLS), Difference-in-Differences, Staggered DiD (Sun–Abraham, Callaway–Sant'Anna, dCDH), Synthetic Control</td>
+      </tr>
+      <tr>
+        <td>Satellite &amp; Geo Data</td>
+        <td>TROPOMI SO₂, VIIRS nightlights, ERA5 wind reanalysis, HYSPLIT atmospheric trajectory modeling</td>
+      </tr>
+      <tr>
+        <td>Administrative Data</td>
+        <td>FDMA ambulance dispatch records (Japan), JMDC medical claims, residential land price data</td>
+      </tr>
+      <tr>
+        <td>Software</td>
+        <td>R (primary: <em>fixest</em>, <em>sf</em>, <em>terra</em>), Stata, Python, LaTeX / Beamer</td>
+      </tr>
+      <tr>
+        <td>Languages</td>
+        <td>Mandarin Chinese (native), Japanese (fluent), English (fluent)</td>
+      </tr>
+    </table>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Mingyao Wang · Hitotsubashi University, Graduate School of Economics</p>
+    <p>
+      <a href="mailto:ed215105@g.hit-u.ac.jp">ed215105@g.hit-u.ac.jp</a>
+      &nbsp;·&nbsp;
+      <a href="https://mingyaowang.com">mingyaowang.com</a>
+      &nbsp;·&nbsp;
+      Last updated: March 2026
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
