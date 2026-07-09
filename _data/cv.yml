@@ -38,6 +38,11 @@
 - title: Publications
   type: time_table
   contents:
+    - title: PFAS Contamination Disclosures and Declining Residential Land Prices in Polluted Areas of Japan
+      institution: Journal of Environmental Economics and Management, 103391
+      year: 2026
+      description:
+        - <a href="https://doi.org/10.1016/j.jeem.2026.103391">DOI:10.1016/j.jeem.2026.103391</a>
     - title: Hidden Hazards Behind Coal Cleaning Technology
       institution: Science of the Total Environment, 954, 176461
       year: 2024
@@ -61,11 +66,6 @@
       description:
         - Co-authored with TANG Meng-Chi and Ting YIN
         - <a href="https://www.rieti.go.jp/en/publications/summary/25120016.html">Link</a>
-    - title: PFAS Contamination Disclosures and Declining Residential Land Prices in Polluted Areas of Japan
-      institution: SSRN Working Paper
-      year: 2025
-      description:
-        - <a href="http://dx.doi.org/10.2139/ssrn.5285846">DOI:10.2139/ssrn.5285846</a>
     - title: Cleaner Upwind Air, Healthier Downwind Lives
       institution: Work in Progress
       year: ""
