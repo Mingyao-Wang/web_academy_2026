@@ -2,9 +2,11 @@
   type: map
   contents:
     - name: Full Name
-      value: Mingyao Wang
+      value: MingYao Wang
     - name: Position
-      value: Ph.D. Candidate in Economics
+      value: Ph.D. in Economics (2026); Incoming Postdoctoral Fellow, Hitotsubashi University (Oct 2026)
+    - name: Status
+      value: On the 2026–27 economics job market
     - name: Institution
       value: Hitotsubashi University
     - name: Email
@@ -22,9 +24,9 @@
 - title: Education
   type: time_table
   contents:
-    - title: Ph.D. Candidate in Economics
+    - title: Ph.D. in Economics
       institution: Hitotsubashi University, Graduate School of Economics, Tokyo, Japan
-      year: 2021 - Present
+      year: 2021 - 2026
       description:
         - 'Dissertation: "The Good, The Bad, and The Ugly: Essays on Environmental Policy"'
         - Advisor: Prof. Reo Takaku
