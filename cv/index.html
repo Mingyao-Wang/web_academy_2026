@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MingYao Wang — Curriculum Vitae</title>
+  <meta name="description" content="Curriculum vitae of MingYao Wang, Ph.D. in Economics (Hitotsubashi University): environmental and health economics, publications, working papers, and experience."/>
+  <meta name="author" content="MingYao Wang"/>
+  <link rel="canonical" href="https://mingyaowang.com/cv/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #5c5b56;
+      --light: #f5f4f1;
+      --cream: #ffffff;
+      --accent: #7c2128;
+      --accent-soft: #f4ecea;
+      --rule: #dad8d1;
+      --serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17.5px; scroll-behavior: smooth; }
+    body { font-family: var(--serif); color: var(--ink); background: var(--cream); line-height: 1.7; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule); padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; height: 56px;
+    }
+    .nav-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--serif); font-size: 0.98rem; font-weight: 500;
+      font-variant: small-caps; letter-spacing: 0.05em;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* LAYOUT */
+    .page { max-width: 980px; margin: 0 auto; padding: 0 2rem; }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 230px;
+      gap: 3.4rem; padding: 3.2rem 0 2.4rem; border-bottom: 2px solid var(--ink);
+    }
+    .hero-text h1 {
+      font-family: var(--serif); font-size: 2.1rem; font-weight: 600;
+      line-height: 1.15; letter-spacing: -0.005em; margin-bottom: 0.35rem;
+    }
+    .jobmarket {
+      font-family: var(--serif); font-size: 1rem; letter-spacing: 0.05em;
+      font-variant: small-caps; color: var(--accent); font-weight: 600; margin-bottom: 1rem;
+    }
+    .subtitle {
+      font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.06em;
+      font-variant: small-caps; color: var(--accent); font-weight: 600; margin-bottom: 1.6rem;
+    }
+    .hero-bio { font-size: 1.08rem; color: #2b2b28; max-width: 60ch; text-align: justify; hyphens: auto; }
+    .hero-bio p + p { margin-top: 0.9rem; }
+    .hero-bio a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+    .hero-bio a:hover { border-bottom-color: var(--accent); }
+
+    .contact-block { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.45rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: var(--serif); font-size: 0.95rem; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .contact-item:hover { color: var(--accent); }
+
+    /* PHOTO COLUMN */
+    .hero-photo-wrap { display: flex; flex-direction: column; align-items: center; padding-top: 0.5rem; gap: 1.2rem; }
+    .hero-photo {
+      width: 200px; height: 200px; border-radius: 0;
+      object-fit: cover; object-position: top center; border: 1px solid var(--ink);
+    }
+    .affil-card {
+      width: 200px; background: var(--light);
+      border: 1px solid var(--rule); border-radius: 0; padding: 1rem 1.1rem;
+    }
+    .affil-card strong { display: block; font-weight: 600; color: var(--ink); font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .affil-card p { font-family: var(--serif); font-size: 0.9rem; line-height: 1.45; color: var(--muted); }
+    .affil-card p + p { margin-top: 0.3rem; }
+    .affil-divider { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--rule); }
+
+    /* SECTIONS */
+    section { padding: 2.3rem 0; border-bottom: 1px solid var(--rule); }
+    section:last-child { border-bottom: none; }
+    .section-label {
+      font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.08em;
+      font-variant: small-caps; color: var(--accent); font-weight: 600; margin-bottom: 1.2rem;
+      padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule);
+    }
+
+    /* PUB GROUPS (Published / Working) */
+    .pub-group {
+      font-family: var(--serif); font-size: 1.02rem; letter-spacing: 0.06em;
+      font-variant: small-caps; color: var(--ink); font-weight: 600;
+      margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 1.5px solid var(--rule);
+    }
+    .pub-group.second { margin-top: 1.6rem; }
+
+    /* PUB ITEM */
+    .pub-item { padding: 0.28rem 0; }
+    .pub-title { font-size: 0.98rem; font-weight: 500; line-height: 1.36; color: var(--ink); }
+    .pub-meta { font-size: 0.9rem; color: var(--muted); font-style: normal; line-height: 1.4; }
+    .pub-link {
+      font-family: var(--serif); font-size: 0.88rem; letter-spacing: 0.02em; font-variant: small-caps;
+      font-weight: 500; color: var(--accent); text-decoration: none; margin-left: 0.3rem;
+      white-space: nowrap; transition: color 0.15s;
+    }
+    .pub-link:hover { text-decoration: underline; }
+    .ja .pub-title, .ja .pub-meta {
+      font-family: "MS Mincho", "ＭＳ 明朝", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-weight: 400;
+    }
+    .ja .pub-title { font-size: 0.9rem; }
+
+    /* TEACHING */
+    .teaching-prose { font-size: 1.06rem; color: #2b2b28; max-width: 74ch; line-height: 1.75; text-align: justify; hyphens: auto; }
+
+    /* METHODS */
+    .methods-table { width: 100%; border-collapse: collapse; }
+    .methods-table tr { border-bottom: 1px solid var(--rule); }
+    .methods-table tr:last-child { border-bottom: none; }
+    .methods-table td { padding: 0.85rem 0; vertical-align: top; }
+    .methods-table td:first-child {
+      font-family: var(--serif); font-size: 1rem; font-weight: 600; font-variant: small-caps;
+      letter-spacing: 0.03em; color: var(--muted); width: 165px; padding-right: 2rem; padding-top: 0.86rem;
+    }
+    .methods-table td:last-child { font-size: 1rem; color: var(--ink); line-height: 1.6; }
+
+    /* FOOTER */
+    footer { border-top: 2px solid var(--ink); padding: 2.2rem 0; }
+    .footer-inner {
+      max-width: 900px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer p { font-family: var(--serif); font-size: 0.92rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* ANIMATION (disabled for a calmer, scholarly feel) */
+    .fade-in, .delay-1, .delay-2 { opacity: 1; transform: none; animation: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0 2.5rem; }
+      .hero-photo-wrap { flex-direction: row; align-items: flex-start; }
+      .affil-card { width: auto; flex: 1; }
+      .pub-item { grid-template-columns: 1fr; }
+      .pub-links { justify-content: flex-start; }
+      .nav-links { gap: 1.1rem; }
+      .methods-table td:first-child { width: 110px; }
+    }
+  </style>
+  <style>
+    /* CV page extras (built on the homepage stylesheet above) */
+    .cv-head {
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      padding: 3rem 0 1.5rem; border-bottom: 2px solid var(--ink);
+    }
+    .cv-head h1 { font-family: var(--serif); font-size: 2.1rem; font-weight: 600; line-height: 1.15; margin: 0 0 0.3rem; }
+    .cv-head .jobmarket { margin: 0; }
+    .cv-pdf {
+      font-family: var(--serif); font-size: 0.95rem; font-variant: small-caps; letter-spacing: 0.04em;
+      color: var(--accent); text-decoration: none; border: 1px solid var(--rule); padding: 0.15rem 0.7rem;
+      white-space: nowrap; transition: all 0.15s;
+    }
+    .cv-pdf:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .cv-table td:first-child { width: 150px; white-space: nowrap; }
+    .cv-title { font-weight: 600; color: var(--ink); }
+    .cv-inst { font-style: italic; color: var(--muted); }
+    .cv-desc { color: #2b2b28; }
+    .cv-inline { font-size: 1rem; color: var(--ink); }
+    @media (max-width: 700px) { .cv-table td:first-child { width: 110px; white-space: normal; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-name">MingYao Wang</a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#publications">Publications</a></li>
+      <li><a href="/#teaching">Teaching</a></li>
+      <li><a href="/cv/">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- CV HEADER -->
+  <div class="cv-head">
+    <div>
+      <h1>MingYao Wang</h1>
+      <div class="jobmarket">Curriculum Vitae · On the 2026–27 Economics Job Market</div>
+    </div>
+    <a class="cv-pdf" href="/assets/pdf/cv_2026Sep.pdf" target="_blank">Download PDF</a>
+  </div>
+
+  <!-- GENERAL -->
+  <section>
+    <div class="section-label">General Information</div>
+    <table class="methods-table cv-table">
+      <tr><td>Position</td><td>Ph.D. in Economics · Incoming Postdoctoral Fellow, Hitotsubashi University (October 2026)</td></tr>
+      <tr><td>Status</td><td>On the 2026–27 economics job market</td></tr>
+      <tr><td>Email</td><td><a class="pub-link" style="margin:0" href="mailto:mywbipper@gmail.com">mywbipper@gmail.com</a> &nbsp;·&nbsp; institutional email incoming</td></tr>
+      <tr><td>Location</td><td>Tokyo, Japan</td></tr>
+      <tr><td>Languages</td><td>Mandarin Chinese (native), Japanese (fluent), English (working proficiency)</td></tr>
+    </table>
+  </section>
+
+  <!-- INTERESTS -->
+  <section>
+    <div class="section-label">Research Interests</div>
+    <p class="cv-inline">Environmental Economics · Health Economics · Applied Econometrics</p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-label">Education</div>
+    <table class="methods-table cv-table">
+      <tr>
+        <td>2021.09 – 2026.09</td>
+        <td>
+          <span class="cv-title">Ph.D. in Economics</span><br>
+          <span class="cv-inst">Hitotsubashi University, Graduate School of Economics, Tokyo, Japan</span><br>
+          <span class="cv-desc">Dissertation: “The Good, The Bad, and The Ugly: Essays on Environmental Policy, Health Effects, Unintended Consequences, and Market Responses”</span>
+        </td>
+      </tr>
+      <tr>
+        <td>2018.04 – 2021.04</td>
+        <td>
+          <span class="cv-title">M.A. in Economics</span><br>
+          <span class="cv-inst">Hitotsubashi University, Graduate School of Economics, Tokyo, Japan</span>
+        </td>
+      </tr>
+      <tr>
+        <td>2012.09 – 2016.06</td>
+        <td>
+          <span class="cv-title">B.A. in Finance</span><br>
+          <span class="cv-inst">University of Jinan, Business School, Jinan, China</span>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section>
+    <div class="section-label">Publications</div>
+
+    <div class="pub-group">Peer-Reviewed Articles</div>
+
+    <div class="pub-item">
+      <div class="pub-title">PFAS Contamination Disclosures and Declining Residential Land Prices in Polluted Areas of Japan</div>
+      <div class="pub-meta">MingYao Wang · <em>Journal of Environmental Economics and Management</em>, vol. 139, 103391, 2026. <a class="pub-link" href="https://doi.org/10.1016/j.jeem.2026.103391" target="_blank">DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Hidden Hazards Behind Coal Cleaning Technology: Unintended Health Deteriorations Amid China's Air Quality Improvements</div>
+      <div class="pub-meta">MingYao Wang · <em>Science of the Total Environment</em>, vol. 954, 176461, 2024. <a class="pub-link" href="https://doi.org/10.1016/j.scitotenv.2024.176461" target="_blank">DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">On Children's School Lives After the COVID Pandemic: The Results and Preliminary Analysis of the School Life Survey in June 2022</div>
+      <div class="pub-meta">Reo Takaku and MingYao Wang · <em>Journal of Social Security Research</em>, vol. 7(3), pp. 224–235, 2022. <a class="pub-link" href="https://doi.org/10.50870/00000465" target="_blank">DOI</a></div>
+    </div>
+
+    <div class="pub-group second">Working Papers</div>
+
+    <div class="pub-item">
+      <div class="pub-title">Indoor Smoking Bans and Children's Health Outcomes in Japan</div>
+      <div class="pub-meta">Meng-Chi Tang, MingYao Wang, and Ting Yin · RIETI Discussion Paper Series 25-E-122, 2025. <a class="pub-link" href="https://www.rieti.go.jp/en/publications/summary/25120016.html" target="_blank">link</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Cleaner Upwind Air, Healthier Downwind Lives: Health Improvements from IMO 2020 Marine Fuel Sulphur Reduction in Japanese Port Regions</div>
+      <div class="pub-meta">MingYao Wang · <em>Work in progress</em></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Cross-Border Health Effects of Upstream Air Quality Improvements: Evidence from China–Japan Pollution Transport</div>
+      <div class="pub-meta">MingYao Wang · <em>Work in progress</em></div>
+    </div>
+  </section>
+
+  <!-- RESEARCH EXPERIENCE -->
+  <section>
+    <div class="section-label">Research Experience</div>
+    <table class="methods-table cv-table">
+      <tr>
+        <td>2023 – 2026</td>
+        <td>
+          <span class="cv-title">Research Assistant</span><br>
+          <span class="cv-inst">Hitotsubashi University, Graduate School of Economics, Tokyo, Japan</span><br>
+          <span class="cv-desc">Research on National Ambulance Service Records with Prof. Reo Takaku</span>
+        </td>
+      </tr>
+      <tr>
+        <td>2023 – 2025</td>
+        <td>
+          <span class="cv-title">Research Assistant</span><br>
+          <span class="cv-inst">Ministry of Economy, Trade and Industry (METI), Tokyo, Japan</span><br>
+          <span class="cv-desc">Economic Analysis of Low Birth Rate and Aging Population Issues in Japan and China</span>
+        </td>
+      </tr>
+      <tr>
+        <td>2023</td>
+        <td>
+          <span class="cv-title">Research Assistant</span><br>
+          <span class="cv-inst">The University of Tokyo, Graduate School of Economics, Tokyo, Japan</span><br>
+          <span class="cv-desc">Research on Factors Influencing the Severity of COVID-19 Patients</span>
+        </td>
+      </tr>
+      <tr>
+        <td>2015 – 2016</td>
+        <td>
+          <span class="cv-title">Research Assistant</span><br>
+          <span class="cv-inst">University of Jinan, Business School, Jinan, China</span><br>
+          <span class="cv-desc">Research on Agricultural Economics</span>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section>
+    <div class="section-label">Work Experience</div>
+    <table class="methods-table cv-table">
+      <tr>
+        <td>2021.04 – 2021.09</td>
+        <td>
+          <span class="cv-title">Cram School Instructor</span><br>
+          <span class="cv-inst">KeiTei Education Group, Tokyo, Japan</span><br>
+          <span class="cv-desc">Microeconomics, Macroeconomics, and Econometrics</span>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- TEACHING -->
+  <section>
+    <div class="section-label">Teaching Experience</div>
+    <table class="methods-table cv-table">
+      <tr>
+        <td>2020</td>
+        <td>
+          <span class="cv-title">Teaching Assistant</span><br>
+          <span class="cv-inst">Hitotsubashi University, Graduate School of Economics, Tokyo, Japan</span><br>
+          <span class="cv-desc">Health Economics Seminar</span>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- CONFERENCES -->
+  <section>
+    <div class="section-label">Conference Presentations</div>
+    <table class="methods-table cv-table">
+      <tr><td>2026.07</td><td>European Health Economics Association (EuHEA) · Rotterdam, Netherlands</td></tr>
+      <tr><td>2026.04</td><td>Western Economic Association International · Bangkok, Thailand</td></tr>
+      <tr><td>2025.07</td><td>Applied Regional Economics Workshop · Okinawa, Japan</td></tr>
+      <tr><td>2024.03</td><td>Japan Health Economics Association (JHEA) 21st Seminar for Early-Career Researchers · Tokyo, Japan</td></tr>
+    </table>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-label">Skills</div>
+    <table class="methods-table cv-table">
+      <tr><td>Programming</td><td>R, Python, Stata</td></tr>
+      <tr><td>Data Analysis Experience</td><td>Vital Statistics birth &amp; death microdata, nationwide ambulance dispatch records, JMDC medical claims</td></tr>
+    </table>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 MingYao Wang · Hitotsubashi University, Graduate School of Economics</p>
+    <p>
+      <a href="mailto:mywbipper@gmail.com">mywbipper@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://mingyaowang.com">mingyaowang.com</a>
+      &nbsp;·&nbsp;
+      Last updated: September 2026
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
