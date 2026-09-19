@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.econ.hit-u.ac.jp/eng/'>Hitotsubashi University, GSE</a>. Contact: mywbipper@gmail.com.
+subtitle: <a href='https://www.econ.hit-u.ac.jp/eng/'>Hitotsubashi University, GSE</a>. Contact: mingyao.wang.econ@gmail.com.
 
 profile:
   align: right
