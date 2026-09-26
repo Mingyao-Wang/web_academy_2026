@@ -77,11 +77,12 @@
       year: ""
       description:
         - Health Improvements from IMO 2020 Marine Fuel Sulphur Reduction in Japanese Port Regions
-    - title: Cross-Border Health Effects of Upstream Air Quality Improvements
+    - title: Cross-Border Health Spillovers of Upstream Air Quality Improvements
       institution: Work in Progress
       year: ""
       description:
-        - Evidence from China-Japan Pollution Transport
+        - Evidence from China–Japan Pollution Transport
+        - Co-authored with Reo Takaku
 
 - title: Research Experience
   type: time_table
