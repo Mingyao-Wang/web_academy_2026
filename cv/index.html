@@ -77,6 +77,21 @@
       text-decoration: none; transition: color 0.2s;
     }
     .contact-item:hover { color: var(--accent); }
+    /* Expired institutional email: click-to-reveal dropdown */
+    .expired { font-family: var(--serif); font-size: 0.95rem; color: var(--muted); }
+    .expired summary {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      cursor: pointer; list-style: none; user-select: none; transition: color 0.2s;
+    }
+    .expired summary::-webkit-details-marker { display: none; }
+    .expired summary::after { content: "▸"; font-size: 0.8em; transition: transform 0.15s; }
+    .expired[open] summary::after { transform: rotate(90deg); }
+    .expired summary:hover, .expired[open] summary { color: var(--accent); }
+    .expired-menu {
+      display: inline-block; margin: 0.35rem 0 0 1.5rem; padding: 0.3rem 0.75rem;
+      border: 1px solid var(--rule); background: var(--light); color: var(--ink);
+      font-size: 0.9rem; box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
 
     /* PHOTO COLUMN */
     .hero-photo-wrap { display: flex; flex-direction: column; align-items: center; padding-top: 0.5rem; gap: 1.2rem; }
@@ -217,7 +232,7 @@
     <table class="methods-table cv-table">
       <tr><td>Position</td><td>Ph.D. in Economics · Incoming Postdoctoral Fellow, Hitotsubashi University (October 2026)</td></tr>
       <tr><td>Status</td><td>On the 2026–27 economics job market</td></tr>
-      <tr><td>Email</td><td><a class="pub-link" style="margin:0" href="mailto:mingyao.wang.econ@gmail.com">mingyao.wang.econ@gmail.com</a> &nbsp;·&nbsp; institutional email incoming<br><span class="cv-inst">ed215105@g.hit-u.ac.jp (expired institutional email)</span></td></tr>
+      <tr><td>Email</td><td><a class="pub-link" style="margin:0" href="mailto:mingyao.wang.econ@gmail.com">mingyao.wang.econ@gmail.com</a> &nbsp;·&nbsp; institutional email incoming<details class="expired"><summary>Expired institutional email</summary><div class="expired-menu">ed215105@g.hit-u.ac.jp</div></details></td></tr>
       <tr><td>Location</td><td>Tokyo, Japan</td></tr>
       <tr><td>Languages</td><td>Mandarin Chinese (native), Japanese (fluent), English (working proficiency)</td></tr>
     </table>
