@@ -50,13 +50,6 @@
       description:
         - Unintended Health Deteriorations Amid China's Air Quality Improvements
         - <a href="https://doi.org/10.1016/j.scitotenv.2024.176461">DOI:10.1016/j.scitotenv.2024.176461</a>
-    - title: On Children's School Lives After the COVID Pandemic
-      institution: Journal of Social Security Research, 7(3), 224-235
-      year: 2022
-      description:
-        - The Results and Preliminary Analysis of the School Life Survey in June 2022
-        - Co-authored with Reo Takaku
-        - <a href="http://dx.doi.org/10.50870/00000465">DOI:10.50870/00000465</a>
 
 - title: Working Papers
   type: time_table
@@ -83,6 +76,16 @@
       description:
         - Evidence from China–Japan Pollution Transport
         - Co-authored with Reo Takaku
+
+- title: Publications in Japanese
+  type: time_table
+  contents:
+    - title: ポストコロナに向けた子どもたちの学校生活の現状―2022年6月の学校生活調査の結果と予備的解析―
+      institution: 社会保障研究, 7(3), 224-235 (特集論文)
+      year: 2022
+      description:
+        - Co-authored with Reo Takaku
+        - <a href="https://doi.org/10.50870/00000465">DOI:10.50870/00000465</a>
 
 - title: Research Experience
   type: time_table
