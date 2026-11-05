@@ -67,7 +67,8 @@ permissions:
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
-    runs-on: ubuntu-latest
+    # pinned: ruby 3.3.5 below is not built for ubuntu-26.04 (what ubuntu-latest became)
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
