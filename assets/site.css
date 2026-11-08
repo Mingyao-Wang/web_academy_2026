@@ -157,6 +157,14 @@ footer a:hover { color: var(--accent); }
   .methods-table td:first-child { width: 110px; }
 }
 
+/* PAGE HEADER (Research, Teaching) */
+.page-head { padding: 3rem 0 1.4rem; border-bottom: 2px solid var(--ink); }
+.page-head h1 { font-family: var(--serif); font-size: 2.1rem; font-weight: 600; line-height: 1.15; letter-spacing: -0.005em; }
+
+/* current page in the nav; the homepage hero ends the page, so no rule under it */
+.nav-links a.active { color: var(--accent); }
+.hero:last-child { border-bottom: none; }
+
 /* SMALL SCREENS: let the nav and footer wrap instead of overflowing */
 @media (max-width: 600px) {
   nav { padding: 0 1rem; }
