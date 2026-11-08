@@ -188,6 +188,24 @@
       .nav-links { gap: 1.1rem; }
       .methods-table td:first-child { width: 110px; }
     }
+    /* DVD-style bouncing square */
+    .dvd {
+      position: fixed; top: 0; left: 0; z-index: 90;
+      width: 56px; height: 56px; background: hsl(187, 70%, 55%);
+      opacity: 0.88; cursor: pointer; will-change: transform;
+      transition: background-color 0.25s;
+    }
+    .dvd-toast {
+      position: fixed; z-index: 110; max-width: min(320px, 90vw);
+      padding: 0.55rem 0.9rem; background: #fff; border: 1px solid var(--ink);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      font-family: var(--serif); font-size: 1rem; color: var(--accent); line-height: 1.4;
+      opacity: 0; transform: translateY(6px); pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+    }
+    .dvd-toast.show { opacity: 1; transform: translateY(0); }
+    @media (max-width: 700px) { .dvd { width: 40px; height: 40px; } }
+    @media (prefers-reduced-motion: reduce) { .dvd { display: none; } }
   </style>
 </head>
 <body>
@@ -341,6 +359,84 @@
     </p>
   </div>
 </footer>
+
+<div class="dvd" aria-hidden="true"></div>
+<script>
+  // Bouncing square, like a TV standby screen: changes color on every wall hit.
+  (function () {
+    var box = document.querySelector(".dvd");
+    if (!box) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { box.remove(); return; }
+    var speed = 130; // px per second
+    var size, W, H;
+    function measure() {
+      size = box.offsetWidth;
+      W = document.documentElement.clientWidth;
+      H = window.innerHeight;
+    }
+    measure();
+    var x = Math.random() * Math.max(0, W - size);
+    var y = Math.random() * Math.max(0, H - size);
+    // random direction, kept away from purely horizontal/vertical
+    var angle = Math.PI / 6 + Math.random() * Math.PI / 6 + Math.floor(Math.random() * 4) * Math.PI / 2;
+    var vx = Math.cos(angle) * speed, vy = Math.sin(angle) * speed;
+    var hue = 187;
+    function recolor() {
+      hue = (hue + 60 + Math.random() * 240) % 360; // always a clearly different color
+      box.style.backgroundColor = "hsl(" + Math.round(hue) + ", 70%, 55%)";
+    }
+    function place() { box.style.transform = "translate(" + x + "px," + y + "px)"; }
+    place();
+    var last = null;
+    var caught = false; // once clicked, it glides to the bottom-right corner and stays there
+    function step(t) {
+      var dt = last === null ? 0 : Math.min((t - last) / 1000, 0.05);
+      last = t;
+      if (caught) {
+        var tx = Math.max(0, W - size - 16), ty = Math.max(0, H - size - 16);
+        var dx = tx - x, dy = ty - y, d = Math.hypot(dx, dy), stepLen = 420 * dt;
+        if (d <= stepLen) { x = tx; y = ty; } else { x += dx / d * stepLen; y += dy / d * stepLen; }
+        place();
+        requestAnimationFrame(step);
+        return;
+      }
+      x += vx * dt; y += vy * dt;
+      var hit = false;
+      if (x <= 0) { x = 0; vx = Math.abs(vx); hit = true; }
+      else if (x >= W - size) { x = Math.max(0, W - size); vx = -Math.abs(vx); hit = true; }
+      if (y <= 0) { y = 0; vy = Math.abs(vy); hit = true; }
+      else if (y >= H - size) { y = Math.max(0, H - size); vy = -Math.abs(vy); hit = true; }
+      if (hit) recolor();
+      place();
+      requestAnimationFrame(step);
+    }
+    // Click (press) the square: a little congratulation pops up next to it.
+    var toast = document.createElement("div");
+    toast.className = "dvd-toast";
+    toast.setAttribute("role", "status");
+    toast.textContent = "Aha, you caught me! Hope your paper gets accepted \uD83C\uDF89";
+    document.body.appendChild(toast);
+    var hideTimer = null;
+    box.addEventListener("pointerdown", function (e) {
+      e.preventDefault();
+      var tw = toast.offsetWidth, th = toast.offsetHeight, gap = 10;
+      var left = Math.min(Math.max(8, x + size / 2 - tw / 2), W - tw - 8);
+      var top = y - th - gap >= 8 ? y - th - gap : Math.min(y + size + gap, H - th - 8);
+      toast.style.left = left + "px";
+      toast.style.top = top + "px";
+      toast.classList.add("show");
+      caught = true;
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () { toast.classList.remove("show"); }, 3000);
+    });
+    window.addEventListener("resize", function () {
+      measure();
+      x = Math.min(x, Math.max(0, W - size));
+      y = Math.min(y, Math.max(0, H - size));
+    });
+    requestAnimationFrame(step);
+  })();
+</script>
 
 </body>
 </html>
