@@ -228,7 +228,9 @@
       var dt = last === null ? 0 : Math.min((t - last) / 1000, 0.05);
       last = t;
       if (caught) {
-        var tx = Math.max(0, W - size - 16), ty = Math.max(0, H - size - 16);
+        var strip = document.querySelector(".standoff"); // park above the standoff strip once it is up
+        var stripH = strip ? Math.max(0, H - strip.getBoundingClientRect().top) : 0;
+        var tx = Math.max(0, W - size - 16), ty = Math.max(0, H - size - 16 - stripH);
         var dx = tx - x, dy = ty - y, d = Math.hypot(dx, dy), stepLen = 420 * dt;
         if (d <= stepLen) { x = tx; y = ty; } else { x += dx / d * stepLen; y += dy / d * stepLen; }
         place();
@@ -261,9 +263,20 @@
       toast.style.top = top + "px";
       toast.classList.add("show");
       caught = true;
+      loadStandoff();
       clearTimeout(hideTimer);
       hideTimer = setTimeout(function () { toast.classList.remove("show"); }, 3000);
     });
+    // Pixel-art standoff along the bottom; its script is fetched only on the first catch.
+    function loadStandoff() {
+      if (window.showStandoff) { window.showStandoff(); return; }
+      if (document.getElementById("standoff-js")) return;
+      var sc = document.createElement("script");
+      sc.id = "standoff-js";
+      sc.src = "/assets/standoff.js?v=1";
+      sc.onload = function () { if (window.showStandoff) window.showStandoff(); };
+      document.head.appendChild(sc);
+    }
     window.addEventListener("resize", function () {
       measure();
       x = Math.min(x, Math.max(0, W - size));
