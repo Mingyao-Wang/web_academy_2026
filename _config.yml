@@ -234,7 +234,7 @@ jekyll-minifier:
 
 terser:
   compress:
-    drop_console: true
+    drop_console: false # keep console output: assets/site.js prints a greeting there
 
 # -----------------------------------------------------------------------------
 # Jekyll Archives
