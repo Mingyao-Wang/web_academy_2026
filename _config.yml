@@ -216,6 +216,10 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: "tavern"
+    values:
+      sitemap: false
 
 sass:
   style: compressed

@@ -80,6 +80,7 @@ nav {
   width: 200px; height: 200px; border-radius: 0;
   object-fit: cover; object-position: top center; border: 1px solid var(--ink);
 }
+.photo-door { display: block; line-height: 0; }
 .affil-card {
   width: 200px; background: var(--light);
   border: 1px solid var(--rule); border-radius: 0; padding: 1rem 1.1rem;
